@@ -66,8 +66,20 @@ header {
                 font-family: "Inter", sans-serif;
                 font-size: 14px;
                 font-weight: 400;
+
+               
+            }
+            & :hover{
+                transform: translateY(-4px);
+                color: #E73239;
+                font-weight: bold;
+            }
+
+            & :active{
+                text-decoration: underline;
             }
         }
+       
     }
 }
 
@@ -146,6 +158,10 @@ main {
                     border-radius: 50px;
                     text-align: center;
                     font-weight: 600;
+                }
+
+                & :hover{
+                    transform: translateY(-4px);
                 }
             }
         }
@@ -321,9 +337,17 @@ footer {
         }
     }
 
-    .back {
+    .back a{
         font-size: 24px;
-        text-decoration: underline;
+        
+        
+
+        &:hover {
+            color: #E73239;
+            text-decoration: underline;
+           
+             
+        }
     }
 
     & .Demostrativo {
