@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Regra global para imagens responsivas.
+   Motivo: impede que qualquer imagem extrapole o contêiner pai,
+   evitando scroll horizontal em telas menores. */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    background: linear-gradient(to right, #00000a, #00000afa, #07070df6);
+    font-family: "Oswald", sans-serif;
+    color: #FEF6E9;
+
+    & a {
+        color: #FEF6E9;
+    }
+}
+
+header {
+    width: 100%;
+    max-width: 1700px;
+    /* Motivo da mudança: "height" fixo cortava conteúdo em telas menores.
+       "min-height" permite que o header cresça se o conteúdo precisar. */
+    min-height: 100px;
+    border: 1px solid rgba(128, 128, 128, 0.678);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    margin: 14px auto;
+    /* Motivo da mudança: gap fixo de 120px estourava telas menores.
+       Agora usa um valor proporcional à largura da tela. */
+    gap: 5%;
+    padding: 0 3%;
+
+    & h1 {
+        /* Motivo da mudança: margin-left de 160px jogava o título
+           para fora da tela em celulares. Agora é relativo. */
+        white-space: nowrap;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+    }
+
+    & .navbar {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+
+        & ul {
+            display: flex;
+            /* Motivo da mudança: gap fixo de 120px entre os links
+               causava overflow. Agora distribui igualmente. */
+            gap: clamp(20px, 4vw, 120px);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & li {
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+main {
+
+    .section-1 {
+
+        display: flex;
+        /* Motivo: permite que os itens quebrem linha quando
+           não couberem lado a lado. */
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+
+        & .inicio {
+            border: 2px solid gray;
+            display: flex;
+            flex-direction: column;
+            /* Motivo da mudança: width fixo de 50% + max-width fixo
+               não se adaptava. Agora usa flex-basis para ser flexível. */
+            flex: 1 1 500px;
+            max-width: 650px;
+
+            /* Motivo da mudança: height fixo de 640px cortava conteúdo
+               em telas menores. Agora o conteúdo define a altura. */
+            min-height: auto;
+            margin: 100px auto;
+            border-radius: 16px;
+            padding: 44px;
+
+            & .txtH2 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+                text-align: center;
+                /* Motivo da mudança: width fixo de 500px estourava
+                   em celulares. Agora ocupa 100% do pai. */
+                width: 100%;
+                max-width: 650px;
+            }
+
+            & .txtP {
+                font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+                font-weight: 300;
+                margin-top: 40px;
+            }
+
+            & .links {
+                display: flex;
+                /* Motivo: flex-wrap permite que os botões empilhem
+                   quando a tela é estreita, em vez de sumir. */
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+                margin-top: 40px;
+                margin-bottom: 30px;
+
+                & #btn-cardapio {
+                    background-color: #FEF6E9;
+                    color: #00000a;
+                    /* Motivo: min-width garante um mínimo, mas
+                       width flexível permite adaptação. */
+                    min-width: 180px;
+                    padding: 16px 40px;
+                    border-radius: 50px;
+                    text-align: center;
+                    font-weight: 600;
+                }
+
+                & .contact {
+                    background-color: #E73239;
+                    color: #FEF6E9;
+                    min-width: 180px;
+                    padding: 16px 40px;
+                    border-radius: 50px;
+                    text-align: center;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        & .img-maior {
+            flex: 1 1 400px;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+/* SECTION 2 — CARDÁPIO */
+.section-2 {
+    padding: 4rem 2rem;
+    text-align: center;
+
+    & #cardapio {
+        margin-bottom: 2rem;
+    }
+
+    & h2 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    & .photosHamburger {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        & .card-burger {
+            /* Card escuro ao redor de cada hambúrguer.
+               background: cor mais clara que o fundo da página, criando contraste.
+               border-radius: bordas arredondadas como na imagem de referência.
+               padding: espaço interno para a imagem não colar nas bordas.
+               display:flex + justify/align: centraliza a imagem dentro do card. */
+            flex: 1 1 250px;
+            max-width: 300px;
+            background-color: #1a1a1f;
+            border-radius: 16px;
+            border: 1px solid gray;
+            overflow: hidden;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Aspecto quadrado: aspect-ratio garante que o card
+               tenha proporção 1:1 (quadrado) independente do tamanho. */
+            aspect-ratio: 1 / 1;
+
+            /* cursor pointer: mostra a mãozinha ao passar o mouse,
+               indicando que o card é clicável */
+            cursor: pointer;
+
+            /* transition: suaviza QUALQUER mudança de propriedade CSS
+               (border-color, transform, etc) em 0.3 segundos */
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+            /* HOVER: quando o mouse passa por cima, o card sobe
+               levemente (translateY -4px) dando sensação de elevação */
+            &:hover {
+                transform: translateY(-4px);
+                border-color: #E73239;
+            }
+
+            /* ATIVO: o card selecionado (clicado) ganha borda vermelha
+               e um brilho sutil, para o usuário saber qual hambúrguer
+               está sendo exibido na imagem principal */
+            &:active {
+                border-color: #fef6e9;
+                box-shadow: 0 0 15px;
+            }
+
+            & img {
+                width: 100%;
+                flex: 1;
+                min-height: 0;
+                object-fit: contain;
+            }
+
+            & .preco {
+                color: bisque;
+                font-family: "Inter", sans-serif;
+                font-size: clamp(0.9rem, 1vw, 1rem);
+                font-weight: 600;
+                line-height: 1.4;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+/* SECTION 3 — SOBRE NÓS */
+.section-3 {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    & h2 {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    & p {
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        font-weight: 300;
+        line-height: 1.8;
+    }
+}
+
+/* FOOTER */
+footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    margin-top: 2rem;
+
+    & h2 {
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    & h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    & h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+
+    & .list {
+        & ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            & li {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+
+                & .icons {
+                    width: 20px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+
+    }
+
+    & .message {
+        display: flex;
+        align-items: start;
+        gap: 0.5rem;
+
+        & img {
+            width: 24px;
+        }
+    }
+
+    .back {
+        font-size: 24px;
+        text-decoration: underline;
+    }
+
+    & .Demostrativo {
+        width: 100%;
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(128, 128, 128, 0.2);
+        margin-top: 1rem;
+
+        & p {
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* 
+   MEDIA QUERIES — RESPONSIVIDADE
+  
+   
+   Motivo: Media queries aplicam estilos diferentes
+   dependendo da largura da tela do dispositivo.
+   Isso permite que o mesmo HTML se adapte a
+   desktops, tablets e celulares.
+    */
+
+/*TABLET (até 1024px) */
+/* Motivo deste breakpoint: Tablets e laptops menores
+   normalmente têm entre 768px e 1024px de largura.
+   Aqui reduzimos espaçamentos e empilhamos elementos
+   que não cabem lado a lado. */
+@media screen and (max-width: 1024px) {
+
+    header {
+        gap: 2%;
+        padding: 10px 2%;
+        border-radius: 16px;
+        min-height: 80px;
+    }
+
+    main .section-1 {
+        /* Motivo: em tablets, empilhamos texto e imagem
+           para que ambos fiquem legíveis. */
+        flex-direction: column;
+
+        & .inicio {
+            margin: 60px auto;
+            padding: 30px;
+        }
+
+        & .img-maior {
+            max-width: 450px;
+        }
+    }
+}
+
+/* ----- MOBILE (até 768px) ----- */
+/* Motivo deste breakpoint: Celulares em modo paisagem
+   e tablets menores. O menu precisa se adaptar e os
+   botões devem empilhar verticalmente. */
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        min-height: auto;
+        border-radius: 16px;
+
+        & .navbar ul {
+            gap: 15px;
+            justify-content: center;
+        }
+    }
+
+    main .section-1 {
+        & .inicio {
+            margin: 30px auto;
+            padding: 24px;
+
+            & .links {
+                /* Motivo: em celulares, botões lado a lado ficam
+                   muito apertados. Empilhá-los melhora o UX
+                   porque a área de toque fica maior. */
+                flex-direction: column;
+                align-items: center;
+
+                & #btn-cardapio,
+                & #contact {
+                    width: 100%;
+                    max-width: 280px;
+                }
+            }
+        }
+    }
+
+    .section-2 .photosHamburger .card-burger {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        & .list ul li {
+            justify-content: center;
+        }
+    }
+}
+
+/* MOBILE PEQUENO (até 480px) */
+/* Motivo deste breakpoint: Celulares menores como
+   iPhone SE (375px). Fontes e paddings precisam
+   de ajuste fino para caberem na tela. */
+@media screen and (max-width: 480px) {
+
+    header {
+        margin: 8px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    main .section-1 .inicio {
+        margin: 20px 8px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .section-2 {
+        padding: 2rem 1rem;
+
+        & .photosHamburger .card-burger {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }
+
+    .section-3 {
+        padding: 2rem 1rem;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+    }
+}

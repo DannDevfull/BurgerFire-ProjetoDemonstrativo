@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+        <title>BurgerFire -ProjetoDemostrativo</title>
+    </head>
+    <body>
+        <header  id="logo">
+            <h1>BRASA BURGER</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#init">HOME</a></li>
+                    <li><a href="#cardapio">CARDÁPIO</a></li>
+                    <li><a href="#sobre">SOBRE NÓS</a></li>
+                    <li><a href="#contatos">CONTATE-NOS</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section-1">
+                <div class="inicio" id="init">
+                    <div class="txtH2">
+                        <h2>EXPERIMENTE O CROWN BURGER HOJE MESMO</h2>
+                    </div>
+                    <div class="txtP">
+                        <p>Desfrute de um hambúrguer preparado com ingredientes de alta qualidade e mais saudáveis. Sabores marcantes, menos concessões — uma refeição satisfatória com a qual você pode se sentir bem.</p>
+                    </div>
+                   <div class="links">
+                        <a href="#cardapio" id="btn-cardapio">CARDÁPIO</a>
+                        <a href="#contatos" class="contact">CONTATE-NOS</a>
+                    </div>
+                </div>
+                <div class="img-maior">
+                    <img src="IMGs/img-hambugerMaior.svg" alt="Hambúrguer artesanal Crown Burger em destaque" id="maior">
+                </div>
+            </section>
+
+            <section class="section-2">
+                <div id="cardapio">
+                    <h2>CARDÁPIO</h2>
+                </div>
+
+                <div class="photosHamburger">
+                    <div class="card-burger">
+                        <img src="IMGs/img-hambugerMenor.svg" alt="Hambúrguer artesanal" onclick="alterar('IMGs/img-hambugerMenor.svg')">
+                        <p class="preco">R$ 29,90</p>
+                    </div>
+
+                    <div class="card-burger">
+                        <img src="IMGs/hamburguer-1-sem-fundo.png" alt="Hambúrguer com ingredientes frescos" onclick="alterar('IMGs/hamburguer-1-sem-fundo.png')">
+                        <p class="preco">R$ 32,90</p>
+                    </div>
+
+                    <div class="card-burger">
+                        <img src="IMGs/hamburguer-3-sem-fundo.png" alt="Hambúrguer especial da casa" onclick="alterar('IMGs/hamburguer-3-sem-fundo.png')">
+                        <p class="preco">R$ 34,90</p>
+                    </div>
+
+                    <div class="card-burger">
+                        <img src="IMGs/magnific__background__4184.png" alt="Hambúrguer gourmet com queijo" onclick="alterar('IMGs/magnific__background__4184.png')">
+                        <p class="preco">R$ 36,90</p>
+                    </div>
+
+                    <div class="card-burger">
+                        <img src="IMGs/magnific__background__4183.png" alt="Hambúrguer premium com bacon" onclick="alterar('IMGs/magnific__background__4183.png')">
+                        <p class="preco">R$ 39,90</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-3">
+                <div>
+                    <h2 id="sobre">SOBRE NÓS</h2>
+                </div>
+                <div>
+                    <p>Na BurgerFire, acreditamos que um bom hambúrguer vai muito além do sabor: é sobre reunir pessoas e criar bons momentos.
+                    Nascemos da paixão por hambúrgueres artesanais, ingredientes selecionados e combinações que fazem a diferença. Cada pedido é preparado com cuidado, valorizando o sabor, a qualidade e aquele toque especial que torna cada mordida única.
+                    Seja para matar a fome no fim do dia ou compartilhar uma refeição com quem você gosta, estamos aqui para transformar momentos simples em experiências deliciosas.
+                    BurgerFire — sabor de verdade, feito para você.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <h2 id="contatos">CONTATE-NOS</h2>
+
+            <div>
+                <h3>BurgerFire</h3>
+                <p>Sabor de verdade, feito para você</p>
+            </div>
+
+            <div class="list">
+                <h4>CONTATO</h4>
+                <ul>
+
+                    <li>
+                        <div class="icons">
+                            <img src="IMGs/Icons/Maps.svg" alt="Ícone de localização">
+                        </div>
+                        <address>
+                            Rua das Palmeiras, 245 — Vila Aurora, São Paulo – SP
+                        </address>
+                    </li>
+
+                    <li>
+
+                        <div class="icons">
+                            <img src="IMGs/Icons/phone.svg" alt="Ícone de telefone"> 
+                        </div>
+                        <address>
+                            (11) 4000-1234
+                        </address> 
+
+
+                    </li>
+                
+                    <li>
+                        <div class="icons">
+                            <img src="IMGs/Icons/instagram.svg" alt="Ícone do Instagram">
+                        </div>
+                        <a href="#insta"> @brasaburger.demo</a>
+                    </li>
+
+                    <li>
+                        <div class="icons">
+                            <img src="IMGs/Icons/Face.svg" alt="Ícone do Facebook">
+                        </div>
+                        <a href="#facebook">/brasaburgerdemo</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="message">
+                <img src="IMGs/Icons/message.svg" alt="Ícone de mensagem WhatsApp">
+                <address>
+                    (11) 99999-1234
+                </address>
+            </div>
+
+            <div class="back">
+                 <a href="#logo">Home</a>
+            </div>
+
+            <div class="Demostrativo">
+                <p>
+                    BurgerFire — Projeto demonstrativo
+                    Marca fictícia desenvolvida para fins de estudo e demonstração de habilidades em desenvolvimento front-end. Os produtos, preços, contatos e demais informações apresentados são ilustrativos. 
+                </p>
+            </div>
+        </footer>
+        <script src="./JS/script.js"></script>
+    </body>
+</html>
